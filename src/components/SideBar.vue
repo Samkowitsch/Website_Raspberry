@@ -1,5 +1,5 @@
 <template>
-    <nav class="Sidebar">
+    <!-- <nav class="Sidebar">
         <ul class="Sidebar_Nav">
             <li class="Item">
                 <a href="#" class="Link" @click="changeSite(0)"> <img src="../assets/weather.svg" alt="" height="100%" > <span class="Text">Weather</span> </a>
@@ -17,7 +17,47 @@
                 <a href="#" class="Link"><span>Last item</span></a>
             </li>
         </ul>
-    </nav>
+    </nav> -->
+    <v-navigation-drawer
+    app
+    dark
+    expand-on-hover
+    bottom
+    clipped
+    v-model="drawer"
+    mini-variant-width="100"
+    >
+        <v-list
+        nav>
+            <template >
+
+                <v-list-item link
+                @click="changeSite(0)">
+                    <v-list-item-icon>
+                        <v-icon x-large>mdi-weather-partly-cloudy</v-icon>
+                    </v-list-item-icon>
+                    <v-list-item-title>Weather</v-list-item-title>
+                </v-list-item>
+
+                <v-list-item link
+                @click="changeSite(1)">
+                    <v-list-item-icon>
+                        <v-icon x-large>mdi-power-plug-outline</v-icon>
+                    </v-list-item-icon>
+                    <v-list-item-title>Energy</v-list-item-title>
+                </v-list-item>
+
+                <v-list-item link
+                @click="changeSite(2)">
+                    <v-list-item-icon>
+                        <v-icon x-large>mdi-lightbulb-on-outline</v-icon>
+                    </v-list-item-icon>
+                    <v-list-item-title>Lights</v-list-item-title>
+                </v-list-item>
+
+            </template>
+        </v-list>
+    </v-navigation-drawer>
 </template>
 
 <script>
